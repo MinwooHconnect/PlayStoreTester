@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">헬스커넥트 앱</string>
+    <string name="btn_check_version">버전 확인하기</string>
+    <string name="check_version_please">버전을 확인해보세요.</string>
+</resources>
