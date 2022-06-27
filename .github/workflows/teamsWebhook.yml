@@ -30,11 +30,12 @@ jobs:
           
           
       - uses: actions/checkout@v2
-      - uses: opsless/ms-teams-github-actions@main
-      #  if: always() # to let this step always run even if previous step failed
+      # this is the new step using the ms-teams-notification action
+      - name: Notify dedicated teams channel
+        uses: jdcargile/ms-teams-notification@v1.3
         with:
-          github-token: ${{ github.token }}
-          webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-          show-on-start: true
-          show-on-exit: true
-          timezone: "UTC"
+          github-token: ${{ github.token }} # this will use the runner's token.
+          ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+          notification-summary: Your custom notification message 
+          notification-color: 17a2b8
+          timezone: America/Denver
