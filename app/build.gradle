@@ -20,6 +20,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    output.outputFileName = output.outputFileName.replace(".apk", "-${variant.versionName}.apk")
+                            .replace("app-", "hp-")
+                }
+            }
         }
     }
     compileOptions {
