@@ -36,6 +36,6 @@ jobs:
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-          notification-summary: Your custom notification message 
+          notification-summary: View Workflow Run버튼을 눌러 자동생성된 파일을 확인해보세요
           notification-color: 17a2b8
-          timezone: America/Denver
+          timezone: Asia/Seoul
